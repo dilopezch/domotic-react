@@ -1,0 +1,281 @@
+@import './variables.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--main-font);
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none; 
+  pointer-events: none;
+}
+
+.preloader.active {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-left: 2rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/*Video*/
+.intro-video {
+  width: 100%;
+  height: auto;
+  z-index: -10;
+}
+
+/*Titulo productos*/
+.productos {
+  margin-bottom: 8rem;
+}
+
+.productos h1 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  margin: 15rem 0 7rem;
+  color: var(--very-dark);
+}
+
+/*slider image*/
+.slider-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8rem 0 12rem 0;
+  background-color: var( --light-white);
+}
+
+.side-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.side-text h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.side-text p {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#slider {
+  max-width: 900px;
+  max-height: 500px;
+  margin: 2rem;
+}
+
+
+/*Imágenes categorías*/
+.grid-categoria-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.grid-categoria-img div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid-categoria-img div:nth-child(1) {
+  background-image: url("../assets/img/smart-hub-controller.png");
+}
+
+.grid-categoria-img div:nth-child(2) {
+  background-image: url("../assets/img/smart-lock-group.jpg");
+}
+
+.grid-categoria-img div h2 {
+  color: white;
+  font-size: 3.8rem;
+  font-weight: 300;
+  margin: 4rem 0 19rem 0;
+  text-shadow: 0px 0px 9px var(--very-dark);
+}
+
+.grid-categoria-img div a {
+  margin-bottom: 2rem;
+}
+
+
+/*section-video*/
+.section-video {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10rem 0;
+  background-color: var( --light-white);
+}
+
+.video-index {
+  display: block;
+  text-align: center;
+  max-width: 900px;
+  max-height: 500px;
+  margin: 2rem;
+}
+
+
+@media screen and (max-width: 540px) {
+
+  .productos h1{
+    font-size: 2.8rem;
+    margin: 7rem 0 3rem;
+  }
+
+  /*slider image*/
+  .slider-images {
+    padding: 5rem 0;
+    margin-bottom: 5rem;
+  }
+
+  .side-text h1 {
+    font-size: 2.3rem;
+  }
+  
+  .side-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /*Imágenes categorías*/
+  .grid-categoria-img {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+
+  .grid-categoria-img div h2 {
+    font-size: 3.2rem;
+  }
+
+  /*section-video*/
+  .section-video {
+    padding: 10rem 1rem;
+  }
+
+  .video-index {
+    max-width: 30rem;
+    margin: 0;
+  }
+  
+}
+
+
+@media screen and (min-width: 541px) and (max-width: 768px) {
+
+  /*Titulo productos*/
+  .productos h1 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  /*section-video*/
+  .section-video {
+    padding: 10rem 2rem;
+  }
+
+  .video-index {
+    max-width: 60rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  /*Titulo productos*/
+  .productos h1 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  /*section-video*/
+  .section-video {
+    padding: 10rem 2rem;
+  }
+
+  .video-index {
+    max-width: 90rem;
+  }
+  
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 2560px) {
+
+  /*Envíos
+  .section-envios-info {
+    padding: 8rem 2rem;
+  }
+
+  .envios-info {
+    margin: 3rem;
+  }
+
+  .envios-info .material-icons {
+    font-size: 4rem;
+    margin-right: 1rem;
+  }
+
+  .envios-info span:nth-child(2) {
+    font-size: 2rem;
+  }*/
+
+}
