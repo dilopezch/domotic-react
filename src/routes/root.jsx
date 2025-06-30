@@ -4,22 +4,23 @@ import logo_moes from '../assets/img/logo_moes.png';
 import appQR from '../assets/img/app-qr.png';
 import playStore from '../assets/img/playStore.png';
 import appStore from '../assets/img/appStore.png';
+import { Outlet } from 'react-router-dom';
 
 
 export default function Root() {
   const header = (
     <header>
       <a href="">
-        <img src={logo_moes} alt="logo_moes" class="logo" />
+        <img src={logo_moes} alt="logo_moes" className="logo" />
       </a>
-      <button class="abrir-menu" id="abrir">
+      <button className="abrir-menu" id="abrir">
         <img src="./assets/icons/menu.svg" alt="btn-abrir" id="menu" />
       </button>
       <nav id="nav">
-        <button class="cerrar-menu" id="cerrar">
+        <button className="cerrar-menu" id="cerrar">
           <img src="./assets/icons/close.svg" alt="btn-cerrar" />
         </button>
-        <ul class="nav-list">
+        <ul className="nav-list">
           <li><a href="./pages/nosotros.html">Nosotros</a></li>
           <li><a href="./pages/catalogo.html">Catálogo</a></li>
           <li><a href="./pages/distribuidores.html">Distribuidores</a></li>
@@ -30,51 +31,51 @@ export default function Root() {
 
   const footer = (
     <footer>
-      <div class="footer-info">
+      <div className="footer-info">
 
-        <div class="footer-info-contactanos">
+        <div className="footer-info-contactanos">
           <h2>Contáctanos</h2>
           <div>
             <h3>E-mail:</h3>
             <a href="mailto:prointingsas@gmail.com?Subject=Información%20de%20productos" target="_blank">
-              <i class="fi fi-rr-envelope"></i>
+              <i className="fi fi-rr-envelope"></i>
               prointingsas@gmail.com</a>
             <a href="mailto:prointingsas@moeshouse.com?Subject=Información%20de%20productos" target="_blank">
-              <i class="fi fi-rr-envelope"></i>
+              <i className="fi fi-rr-envelope"></i>
               prointingsas@moeshouse.com</a>
           </div>
 
           <div>
             <h3>Celular:</h3>
             <a href="tel:+573164908069" target="_blank">
-              <i class="fi fi-rr-phone-call"></i>
+              <i className="fi fi-rr-phone-call"></i>
               +57 316 490 8069</a>
           </div>
 
           <div>
             <h3>Dirección:</h3>
             <a href="https://maps.app.goo.gl/SJEBz1sbV7hwscyT6" target="_blank" rel="noopener">
-              <i class="fi fi-rs-marker"></i>
+              <i className="fi fi-rs-marker"></i>
               Carrera 47 #94-82 Barranquilla - Atlántico</a>
           </div>
         </div>
 
-        <div class="footer-social-media">
+        <div className="footer-social-media">
           <a href="https://wa.me/573164908069/?text=Hola!%20Quiero%20información%20de%20un%20producto" target="_blank"
-            rel="noopener"><i class="fi fi-brands-whatsapp"></i></a>
-          <a href="mailto:prointingsas@gmail.com?Subject=Información%20de%20productos" target="_blank" rel="noopener"><i class="fi fi-rr-envelope"></i></a>
+            rel="noopener"><i className="fi fi-brands-whatsapp"></i></a>
+          <a href="mailto:prointingsas@gmail.com?Subject=Información%20de%20productos" target="_blank" rel="noopener"><i className="fi fi-rr-envelope"></i></a>
           <a href="https://www.instagram.com/moescolombia/" target="_blank" rel="noopener"><i
-            class="fi fi-brands-instagram"></i></a>
+            className="fi fi-brands-instagram"></i></a>
         </div>
 
-        <div class="footer-logo">
+        <div className="footer-logo">
           <img src="./assets/img/logo_moes-white.png" alt="" />
         </div>
 
-        <div class="footer-info-descarga">
+        <div className="footer-info-descarga">
           <h2>App disponible para descarga</h2>
-          <img src={appQR} alt="qr" class="footer-info-descarga-qr" />
-          <div class="footer-info-descarga-img">
+          <img src={appQR} alt="qr" className="footer-info-descarga-qr" />
+          <div className="footer-info-descarga-img">
             <a href="https://apps.apple.com/ar/app/moes/id1445259938" target="_blank" rel="noopener">
               <img src={appStore} alt="appstore-logo" />
             </a>
@@ -86,10 +87,10 @@ export default function Root() {
 
       </div>
 
-      <div class="footer-personal-info">
+      <div className="footer-personal-info">
         <span>Desarrollado por Diana López - 2024</span>
-        <a href="mailto:dilopezch@gmail.com" target="_blank" rel="noopener"><i class="fi fi-rr-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/diana-lopez-35089a228/" target="_blank" rel="noopener"><i class="fi fi-brands-linkedin"></i></a>
+        <a href="mailto:dilopezch@gmail.com" target="_blank" rel="noopener"><i className="fi fi-rr-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/diana-lopez-35089a228/" target="_blank" rel="noopener"><i className="fi fi-brands-linkedin"></i></a>
       </div>
 
     </footer >
@@ -97,10 +98,9 @@ export default function Root() {
   )
   return (
     <>
-
       {header}
+      <Outlet />  
       {footer}
-
     </>
   );
 }
